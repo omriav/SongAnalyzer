@@ -14,7 +14,7 @@ class SongFactory:
         q = {
             "query": {
                 "match": {
-                    "_body.artist.unique_name": "Red_Hot_Chili_Peppers"
+                    "_body.artist.unique_name": "{0}".format(artist_name)
                 }
             }
         }
@@ -23,14 +23,3 @@ class SongFactory:
         parsed_result = [h["_source"]["_body"] for h in res["hits"]["hits"]]
 
         return parsed_result
-
-"""
-    def get_songs_by_artist(self, artist_name):
-        DATA_URL = "/home/omri/Dev/Python/IntroToDS/Data/parsed_lyrics/{0}"
-        songs_list = []
-
-        with open(DATA_URL.format(artist_name), "rb") as data_file:
-            songs_list = json.loads(gzip.decompress(data_file.read()).decode())
-
-        return songs_list
-"""
