@@ -42,7 +42,7 @@ class SongFactory:
                     }
                 }
             },
-            "size": 500
+            "size": 5000
         }
 
         return self.execute_es_query(q)

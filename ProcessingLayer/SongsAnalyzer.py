@@ -6,7 +6,7 @@ import re
 
 class SongsAnalyzer:
     ARTIST_WORDS_THRESHOLD = 35000
-    YEAR_WORDS_THRESHOLD = 50000
+    YEAR_WORDS_THRESHOLD = 500000
 
     def __init__(self):
         self.songs_factory = factory.SongFactory()
@@ -35,7 +35,7 @@ class SongsAnalyzer:
         return words
 
     def threshold_checker(self, words, threshold, message):
-        if len(words) < self.ARTIST_WORDS_THRESHOLD:
+        if len(words) < threshold:
             raise Exception(message)
 
     def get_words_list_by_artist(self, artist_name):

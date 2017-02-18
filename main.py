@@ -1,5 +1,6 @@
 import ProcessingLayer.SongsAnalyzer as analyzer
 
+
 def main():
     print("Songs Analyzer Project")
     songs_analyzer = analyzer.SongsAnalyzer()
