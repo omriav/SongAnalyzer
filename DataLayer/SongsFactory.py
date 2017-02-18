@@ -1,5 +1,3 @@
-import json
-import gzip
 from elasticsearch import Elasticsearch
 
 
@@ -27,7 +25,7 @@ class SongFactory:
                     "_body.artist.unique_name": "{0}".format(artist_name)
                 }
             },
-            "size": 100
+            "size": 500
         }
 
         return self.execute_es_query(q)

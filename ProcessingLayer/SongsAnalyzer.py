@@ -1,11 +1,10 @@
-import nltk
 from nltk.stem import PorterStemmer
 import DataLayer.SongsFactory as factory
 import re
 
 
 class SongsAnalyzer:
-    ARTIST_WORDS_THRESHOLD = 35000
+    ARTIST_WORDS_THRESHOLD = 12000
     YEAR_WORDS_THRESHOLD = 500000
 
     def __init__(self):
@@ -43,7 +42,7 @@ class SongsAnalyzer:
         words = self.convert_songs_to_words_bag(songs_by_artist, self.ARTIST_WORDS_THRESHOLD)
 
         self.threshold_checker(words, self.ARTIST_WORDS_THRESHOLD,
-                               "Artist '{0}' has only {1} words. Instead of {1} words".
+                               "Artist '{0}' has only {1} words. Instead of {2} words".
                                format(artist_name, len(words), self.ARTIST_WORDS_THRESHOLD))
 
         return words
