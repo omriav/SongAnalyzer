@@ -9,7 +9,7 @@ class SongFactory:
         self.es = Elasticsearch()
 
     def parse_results(self, results):
-        parsed_result = [h["_source"]["_body"] for h in results["hits"]["hits"]]
+        parsed_result = [h["_source"] for h in results["hits"]["hits"]]
 
         return parsed_result
 
@@ -22,7 +22,7 @@ class SongFactory:
         q = {
             "query": {
                 "match": {
-                    "_body.artist.unique_name": "{0}".format(artist_name)
+                    "artist.unique_name": "{0}".format(artist_name)
                 }
             },
             "size": 500
@@ -34,7 +34,7 @@ class SongFactory:
         q = {
             "query": {
                 "range": {
-                    "_body.album.year": {
+                    "album.year": {
                         "gte": start_year,
                         "lte": end_year
                     }
