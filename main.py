@@ -5,12 +5,27 @@ def main():
     print("Songs Analyzer Project")
     songs_analyzer = analyzer.SongsAnalyzer()
 
-    """
-    diversity = songs_analyzer.lexical_diversity_by_artist(["Berri Saharof"])
-    print(str(diversity))
-    """
+    final_hebrew_list = []
+    hebrew_list = ["Idan Raichel", "Eviatar Banai", "Moshe Peretz", "Dudu Aharon", "Kobi Peretz",
+                   "Meir Ariel", "Hadag Nahash", "Lior Narkis", "Mooki"]
+    hebrew_diversity_sum = 0
+    for artist in hebrew_list:
+        diversity = songs_analyzer.lexical_diversity_by_artist(artist)
+        hebrew_diversity_sum += diversity
+        final_hebrew_list.append({
+            "name": artist,
+            "score": diversity
+        })
 
+    final_hebrew_list.sort(key=lambda x: x['score'])
+    for artist_total in final_hebrew_list:
+        print("Hebrew artist: {0} has lexical diversity of {1}".
+              format(artist_total["name"], artist_total["score"]))
 
+    hebrew_diversity_avg = hebrew_diversity_sum / len(hebrew_list)
+    print("Average diversity for hebrew artists: {0}\n".format(hebrew_diversity_avg))
+
+    """
     rappers_list = ["kool_keith", "canibus", "cunninlynguists", "rza", "wu-tang", "killah_priest", "eminem"]
     rappers_diversity_sum = 0
     for artist in rappers_list:
@@ -35,7 +50,6 @@ def main():
     pop_diversity_avg = pop_diversity_sum / len(pop_artists)
     print("Average diversity for pop artists is: {0}".format(pop_diversity_avg))
 
-    """
 
     years_intervals = [(1970, 1979), (1980, 1989), (1990, 1999), (2000, 2009)]
     for year_interval in years_intervals:

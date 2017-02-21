@@ -4,7 +4,7 @@ import re
 
 
 class SongsAnalyzer:
-    ARTIST_WORDS_THRESHOLD = 12000
+    ARTIST_WORDS_THRESHOLD = 4500
     YEAR_WORDS_THRESHOLD = 500000
 
     def __init__(self):
