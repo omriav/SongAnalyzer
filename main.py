@@ -7,7 +7,10 @@ def main():
 
     final_hebrew_list = []
     hebrew_list = ["Idan Raichel", "Eviatar Banai", "Moshe Peretz", "Dudu Aharon", "Kobi Peretz",
-                   "Meir Ariel", "Hadag Nahash", "Lior Narkis", "Mooki"]
+                   "Meir Ariel", "Hadag Nahash", "Lior Narkis", "Mooki", "Eyal Golan", "Omer Adam",
+                   "Regev Hod", "Sarit Hadad", "Shlomo Artzi", "Shalom Hanoch", "Arik Einstein",
+                   "Rita", "Miri Mesika", "Keren Peles", "Assaf Amdursky", "Avraham Tal",
+                   "Mashina"]
     hebrew_diversity_sum = 0
     for artist in hebrew_list:
         diversity = songs_analyzer.lexical_diversity_by_artist(artist)
