@@ -10,7 +10,7 @@ def main():
                    "Meir Ariel", "Hadag Nahash", "Lior Narkis", "Mooki", "Eyal Golan", "Omer Adam",
                    "Regev Hod", "Sarit Hadad", "Shlomo Artzi", "Shalom Hanoch", "Arik Einstein",
                    "Rita", "Miri Mesika", "Keren Peles", "Assaf Amdursky", "Avraham Tal",
-                   "Mashina"]
+                   "Mashina", "Yehoram Gaon"]
     hebrew_diversity_sum = 0
     for artist in hebrew_list:
         diversity = songs_analyzer.lexical_diversity_by_artist(artist)
@@ -26,7 +26,7 @@ def main():
               format(artist_total["name"], artist_total["score"]))
 
     hebrew_diversity_avg = hebrew_diversity_sum / len(hebrew_list)
-    print("Average diversity for hebrew artists: {0}\n".format(hebrew_diversity_avg))
+    print("\nAverage diversity for hebrew artists: {0}\n".format(hebrew_diversity_avg))
 
     """
     rappers_list = ["kool_keith", "canibus", "cunninlynguists", "rza", "wu-tang", "killah_priest", "eminem"]
