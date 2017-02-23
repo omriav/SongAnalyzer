@@ -4,11 +4,10 @@ import re
 
 
 class SongsAnalyzer:
-    ARTIST_WORDS_THRESHOLD = 4500
-    YEAR_WORDS_THRESHOLD = 500000
-
-    def __init__(self):
+    def __init__(self, artist_words_threshold, year_words_threshold):
         self.songs_factory = factory.SongFactory()
+        self.ARTIST_WORDS_THRESHOLD = artist_words_threshold
+        self.YEAR_WORDS_THRESHOLD = year_words_threshold
 
     def calculate_lexical_diversity(self, tokens):
         stemmer = PorterStemmer()

@@ -1,6 +1,7 @@
 import ProcessingLayer.SongsAnalyzer as analyzer
-from Model.Artist import Artist
 from Model.MusicGenre import MusicGenre
+import Configuration.ConfigurationManager as cfg
+
 
 class AnalysisTasks:
     def calculate_average_diversity_by_gnere(self, full_artists_list, music_gnere):
@@ -10,34 +11,11 @@ class AnalysisTasks:
 
         return diversity_average
 
-    def compareOrieantalToIsraeli(self):
-        songs_analyzer = analyzer.SongsAnalyzer()
+    def compare_oriental_to_israeli(self):
+        songs_analyzer = analyzer.SongsAnalyzer(cfg.HEBREW_ARTIST_WORD_THRESHOLD,
+                                                cfg.HEBREW_YEAR_WORD_THRESHOLD)
 
-        hebrew_artists_list = [
-            Artist("Idan Raichel", MusicGenre.Israeli),
-            Artist("Eviatar Banai", MusicGenre.Israeli),
-            Artist("Moshe Peretz", MusicGenre.Oriental),
-            Artist("Dudu Aharon", MusicGenre.Oriental),
-            Artist("Kobi Peretz", MusicGenre.Oriental),
-            Artist("Meir Ariel", MusicGenre.Israeli),
-            Artist("Hadag Nahash", MusicGenre.Israeli),
-            Artist("Lior Narkis", MusicGenre.Oriental),
-            Artist("Mooki", MusicGenre.Israeli),
-            Artist("Eyal Golan", MusicGenre.Oriental),
-            Artist("Omer Adam", MusicGenre.Oriental),
-            Artist("Regev Hod", MusicGenre.Oriental),
-            Artist("Sarit Hadad", MusicGenre.Oriental),
-            Artist("Shlomo Artzi", MusicGenre.Israeli),
-            Artist("Shalom Hanoch", MusicGenre.Israeli),
-            Artist("Arik Einstein", MusicGenre.Israeli),
-            Artist("Rita", MusicGenre.Israeli),
-            Artist("Miri Mesika", MusicGenre.Israeli),
-            Artist("Keren Peles", MusicGenre.Israeli),
-            Artist("Assaf Amdursky", MusicGenre.Israeli),
-            Artist("Avraham Tal", MusicGenre.Israeli),
-            Artist("Mashina", MusicGenre.Israeli),
-            Artist("Yehoram Gaon", MusicGenre.Israeli),
-        ]
+        hebrew_artists_list = cfg.HEBREW_ARTIST_LIST
 
         for artist in hebrew_artists_list:
             artist.diversity_score = songs_analyzer.lexical_diversity_by_artist(artist.name)
@@ -51,3 +29,16 @@ class AnalysisTasks:
         oriental_average = self.calculate_average_diversity_by_gnere(hebrew_artists_list, MusicGenre.Oriental)
         print("\nIsraeli average diversity score: " + str(israeli_average))
         print("Oriental average diversity score: " + str(oriental_average))
+
+    def analyze_hip_hop(self):
+        songs_analyzer = analyzer.SongsAnalyzer(cfg.ENGLISH_ARTIST_WORD_THRESHOLD,
+                                                cfg.HEBREW_YEAR_WORD_THRESHOLD)
+
+        hiphop_artist_list = cfg.HIPHOP_ARTIST_LIST
+        for artist in hiphop_artist_list:
+            artist.diversity_score = songs_analyzer.lexical_diversity_by_artist(artist.name)
+
+        hiphop_artist_list.sort(key=lambda x: x.diversity_score)
+        for artist in hiphop_artist_list:
+            print("{0}({1}) has lexical diversity of {2}".
+                  format(artist.name, artist.music_genre.name, artist.diversity_score))

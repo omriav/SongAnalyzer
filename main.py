@@ -4,7 +4,8 @@ def main():
     print("Songs Analyzer Project")
     tasks = AnalysisTasks()
 
-    tasks.compareOrieantalToIsraeli()
+    #tasks.compare_oriental_to_israeli()
+    tasks.analyze_hip_hop()
 
     """
     rappers_list = ["kool_keith", "canibus", "cunninlynguists", "rza", "wu-tang", "killah_priest", "eminem"]
