@@ -29,6 +29,19 @@ HEBREW_ARTIST_LIST = [
             Artist("Avraham Tal", MusicGenre.Israeli),
             Artist("Mashina", MusicGenre.Israeli),
             Artist("Yehoram Gaon", MusicGenre.Israeli),
+            Artist("Yishi Levi", MusicGenre.Oriental),
+            Artist("Avi Biter", MusicGenre.Oriental),
+            Artist("Shlomi Shabat", MusicGenre.Oriental),
+            Artist("Zehava Ben", MusicGenre.Oriental),
+            Artist("Zohar Argov", MusicGenre.Oriental),
+            Artist("Lior Farhi", MusicGenre.Oriental),
+            Artist("Shimi Tavori", MusicGenre.Oriental),
+            Artist("Ofer Levi", MusicGenre.Oriental),
+            Artist("Moshik Afia", MusicGenre.Oriental),
+            Artist("Zehava Ben", MusicGenre.Oriental),
+            Artist("Idan Yaniv", MusicGenre.Oriental),
+            Artist("Margalit Tzanani", MusicGenre.Oriental),
+            Artist("Boaz Sharabi", MusicGenre.Oriental)
 ]
 
 # For english analysis
