@@ -32,7 +32,7 @@ HEBREW_ARTIST_LIST = [
 ]
 
 # For english analysis
-ENGLISH_ARTIST_WORD_THRESHOLD = 35000
+ENGLISH_ARTIST_WORD_THRESHOLD = 12000
 ENGLISH_YEAR_WORD_THRESHOLD = 500000
 
 HIPHOP_ARTIST_LIST = [
@@ -41,4 +41,24 @@ HIPHOP_ARTIST_LIST = [
     Artist("RZA", MusicGenre.HipHop),
     Artist("Killah_Priest", MusicGenre.HipHop),
     Artist("Eminem", MusicGenre.HipHop)
+]
+
+POP_ARTIST_LIST = [
+    Artist("Lady_Gaga", MusicGenre.Pop),
+    Artist("Big_Sean", MusicGenre.Pop),
+    Artist("Ed_Sheeran", MusicGenre.Pop),
+    Artist("Drake", MusicGenre.Pop),
+    Artist("Migos", MusicGenre.Pop),
+    Artist("Rihanna", MusicGenre.Pop),
+    Artist("Adele", MusicGenre.Pop),
+    Artist("Twenty_One_Pilots", MusicGenre.Pop),
+    Artist("Ariana_Grande", MusicGenre.Pop),
+    Artist("Taylor_Swift", MusicGenre.Pop),
+    Artist("Maroon_5", MusicGenre.Pop),
+    Artist("Justin_Bieber", MusicGenre.Pop),
+    Artist("Imagine_Dragons", MusicGenre.Pop),
+    Artist("John_Legend", MusicGenre.Pop),
+    Artist("Metallica", MusicGenre.Pop),
+    Artist("Sia", MusicGenre.Pop),
+    Artist("Train", MusicGenre.Pop),
 ]
