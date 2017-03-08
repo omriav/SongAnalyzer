@@ -16,7 +16,7 @@ class SongsAnalyzer:
 
         type_token_ratio = len(types) / len(stemmed_tokens)
 
-        return type_token_ratio
+        return type_token_ratio * 100
 
     def convert_songs_to_words_bag(self, songs, threshold=-1):
         words = []
