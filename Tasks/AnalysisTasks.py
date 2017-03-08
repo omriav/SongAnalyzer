@@ -31,7 +31,7 @@ class AnalysisTasks:
 
         hebrew_artists_list.sort(key=lambda x: x.diversity_score)
         for artist in hebrew_artists_list:
-            print("{0}({1}) has lexical diversity of {2}".
+            print("{0}({1})\t{2}".
                   format(artist.name, artist.music_genre.name, artist.diversity_score))
 
         israeli_average = self.calculate_average_diversity_by_gnere(hebrew_artists_list, MusicGenre.Israeli)
